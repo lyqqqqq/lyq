@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .square{
+            width: 200px;
+            height: 200px;
+            border: 1px solid red;
+            position: absolute;
+        }
+        .div1{
+            /*border-right-color: transparent;*/
+        }
+        .div2{
+            left: 209px;
+            /*border-bottom-color: transparent;*/
+        }
+        .div3{
+            top: 209px;
+            /*border-top-color: transparent;*/
+        }
+        .div4{
+            left: 209px;
+            top: 209px;
+            /*border-left-color: transparent;*/
+        }
+        .div1:hover{
+            border-color: blue;
+            z-index: 1;
+        }
+        .div2:hover{
+            border-color: yellow;
+            z-index: 1;
+        }
+        .div3:hover {
+            border-color: green;
+            z-index: 1;
+        }
+        .div4:hover {
+            border-color: pink;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+<div class="square div1"></div>
+<div class="square div2"></div>
+<div class="square div3"></div>
+<div class="square div4"></div>
+
+</body>
+</html>
