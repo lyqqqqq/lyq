@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        html,body{
+            width: 100%;
+            height: 100%;
+        }
+        #menu{
+            width: 120px;
+            border: 1px solid black;
+            text-align: center;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            display: none;
+        }
+        #menu li{
+            height: 30px;
+            line-height: 30px;
+            border-bottom: 1px solid #cccccc;
+        }
+        #menu li:last-child{
+            border-bottom: 0;
+        }
+        /*#menu li:hover{*/
+            /*background: pink;*/
+        /*}*/
+    </style>
+</head>
+<body>
+ <ul id="menu">
+     <li>打开</li>
+     <li>删除</li>
+     <li>复制</li>
+     <li>粘贴</li>
+     <li>属性</li>
+ </ul>
+<script>
+    var oMenu = document.getElementById('menu');
+    var aLi = document.getElementsByTagName('li');
+    document.oncontextmenu=function (e) {
+        // console.log(document.documentElement.offsetWidth)显示屏幕宽度
+        oMenu.style.display='block';
+        var dw = document.documentElement.offsetWidth;
+        var dh = document.documentElement.offsetHeight;
+        var mw = oMenu.offsetWidth;
+        var mh = oMenu.offsetHeight;
+        if (e.clientX > (dw-mw)){
+            oMenu.style.left=(e.clientX-mw)+'px';
+        }else {
+            oMenu.style.left=e.clientX+'px';
+        }
+        if (e.clientY > (dh-mh)){
+            oMenu.style.top=(e.clientY-mh)+'px';
+        }else {
+            oMenu.style.top=e.clientY+'px';
+        }
+        return false;
+    }
+    document.onclick=function () {
+        oMenu.style.display='none';
+    }
+    for (var i=0;i<aLi.length;i++){
+        aLi[i].onmouseover = function () {
+            this.style.background = 'pink';
+        }
+        aLi[i].onmouseout  = function () {
+            this.style.background = '';
+        }
+        aLi[i].onclick = function () {
+            alert(this.innerHTML);
+        }
+    }
+
+</script>
+</body>
+</html>
