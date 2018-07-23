@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+            background: #cccccc;
+        }
+        #menu{
+            margin: 100px auto;
+            width: 500px;
+        }
+        #menu li{
+            height: 20px;
+            width: 100px;
+            float: left;
+            margin: 0 20px;
+            /*line-height:20;*/
+            text-align: center;
+            color: white;
+        }
+        #choose{
+            width: 500px;
+            height: 500px;
+            margin: 100px auto;
+            position: relative;
+        }
+        #choose div{
+            background: #cccccc;
+            color: black;
+            border-top: 1px solid black;
+            width: 380px;
+            height: 200px;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: none;
+        }
+        #choose li.first{
+            background: black;
+            color: brown;
+        }
+        #choose div.show{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div id="choose">
+    <ul id="menu">
+        <li class="first">111</li>
+        <li>222</li>
+        <li>333</li>
+    </ul>
+    <div class="show">
+        aaa
+    </div>
+    <div>
+        bbb
+    </div>
+    <div>
+        ccc
+    </div>
+</div>
+<script>
+    var aLi = document.getElementsByTagName('li');
+    var oMenu = document.getElementById('choose');
+    var aDiv = oMenu.getElementsByTagName('div');
+    for (var i=0;i<aLi.length;i++){
+        aLi[i].xx = i;
+        aLi[i].onclick = function (){
+            for (var j=0;j<aLi.length;j++) {
+                aLi[j].className = '';
+                aDiv[j].className = '';
+            }
+            this.className = 'first';
+            aDiv[this.xx].className = 'show';
+        }
+    }
+
+</script>
+</body>
+</html>
