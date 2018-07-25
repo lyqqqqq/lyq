@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+   <style>
+       *{
+           margin: 0;
+           padding: 0;
+       }
+       li{
+           list-style: none;
+       }
+       #box{.
+           width: 300px;
+           height: 300px;
+           border: 2px solid brown;
+           margin: 100px auto;
+           position: relative;
+           overflow: hidden;
+       }
+       #box .nav{
+           width: 2000px;
+           position: absolute;
+           left: 0;
+       }
+       #box .nav li{
+           width: 80px;
+           height: 80px;
+           color: white;
+           background: black;
+           float: left;
+           margin-right: 10px;
+           text-align: center;
+           line-height: 80px;
+       }
+       #box .button{
+           position: absolute;
+           top: 200px;
+           right: 80px;
+       }
+       #box .button div{
+           width: 50px;
+           height: 30px;
+           background: brown;
+           color: white;
+           float: left;
+           margin-right: 10px;
+           text-align: center;
+           line-height: 30px;
+       }
+   </style>
+</head>
+<body>
+<div id="box">
+    <ul class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+    </ul>
+    <div class="button">
+        <div id="left">向左</div>
+        <div id="right">向右</div>
+    </div>
+</div>
+<script>
+    var aUl = document.getElementsByClassName('nav');
+    var oLeft = document.getElementById('left');
+    var oRight = document.getElementById('right');
+    var speed = -2;
+        setInterval(function () {
+            var o = getComputedStyle(aUl[0],false).left;
+            o = parseInt(o);
+            if (o<-360){
+                aUl[0].style.left=0+'px';
+            }else if (o>0){
+                aUl[0].style.left = -360+'px';
+            }
+            else{
+                o = parseInt(o)+speed;
+                aUl[0].style.left=o+'px';
+            }
+
+            console.log(o);
+        },10)
+    oLeft.onmouseover = function (){
+        speed = -2;
+    }
+    oRight.onmouseover = function (){
+        speed = 2;
+    }
+
+
+</script>
+
+</body>
+</html>

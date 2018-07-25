@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #square{
+            width: 200px;
+            height: 200px;
+            background: lawngreen;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+<div id="square">
+
+</div>
+<script>
+    var oSquare = document.getElementById('square');
+    oSquare.onmousedown = function(e){
+        var ileft=e.clientX-this.offsetLeft;
+        var itop=e.clientY-this.offsetTop;
+        document.onmousemove = function (e){
+            var newLeft = e.clientX-ileft;
+            var newTop = e.clientY-itop;
+            if (newLeft>document.documentElement.offsetWidth-oSquare.offsetWidth) {
+                newLeft=document.documentElement.offsetWidth-oSquare.offsetWidth;
+            }else if (newLeft<0){
+                newLeft=0;
+            }
+            if(newTop > window.innerHeight - oSquare.offsetHeight){
+                newTop = window.innerHeight - oSquare.offsetHeight;
+            }else if(newTop < 0){
+                newTop  = 0;
+            }
+            oSquare.style.left = newLeft + 'px';
+            oSquare.style.top = newTop + 'px';
+
+        }
+        oSquare.onmouseup = function () {
+            document.onmousemove = null;
+        }
+    }
+
+</script>
+</body>
+</html>
