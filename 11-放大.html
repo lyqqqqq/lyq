@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #bg-small{
+            width: 400px;
+            height: 400px;
+            position: relative;
+        }
+        #bg-small img{
+            width: 400px;
+            height: 400px;
+        }
+        #bg-big{
+            width: 400px;
+            height: 400px;
+            position: absolute;
+            top: 0;
+            left: 410px;
+            display: none;
+            overflow: hidden;
+        }
+        #bg-big img{
+            width: 800px;
+            height: 800px;
+            position: absolute;
+        }
+        #square{
+            width: 200px;
+            height: 200px;
+            background: #cccccc;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            opacity: 0.5;
+            display: none;
+            cursor: move;
+        }
+    </style>
+</head>
+<body>
+    <div id="bg-small">
+        <img src="Daniel/background-姜.jpg">
+        <div id="square"></div>
+    </div>
+    <div id="bg-big">
+        <img src="Daniel/background-姜.jpg">
+    </div>
+
+
+<script>
+    var oSquare = document.getElementById('square');
+    var oSmall = document.getElementById('bg-small');
+    var oBig = document.getElementById('bg-big');
+    var oBigImg = oBig.getElementsByTagName('img')[0];
+
+    oSmall.onmouseover = function (e) {
+        oBig.style.display = 'block';
+        oSquare.style.display = 'block';
+        oSmall.onmousemove = function (e) {
+            e = e || window.event;
+            var newLeft = e.clientX-oSquare.offsetWidth/2;
+            var newTop = e.clientY-oSquare.offsetHeight/2;
+            if (newLeft > oSmall.offsetWidth-oSquare.offsetWidth){
+                newLeft = oSmall.offsetWidth-oSquare.offsetWidth
+            } else if (newLeft < 0){
+                newLeft = 0;
+            }
+            if (newTop > oSmall.offsetHeight-oSquare.offsetHeight){
+                newTop = oSmall.offsetHeight-oSquare.offsetHeight;
+            } else if (newTop < 0){
+                newTop = 0;
+            }
+            var xxx = newLeft / (oSmall.offsetWidth - oSquare.offsetWidth);
+            var bigX = xxx * (oBigImg.offsetWidth - oBig.offsetWidth);
+
+            var yyy = newTop / (oSmall.offsetHeight - oSquare.offsetHeight);
+            var bigY = yyy * (oBigImg.offsetHeight - oBig.offsetHeight);
+
+            oBigImg.style.left = -bigX + 'px';
+            oBigImg.style.top = -bigY + 'px';
+
+            oSquare.style.left = newLeft + 'px';
+            oSquare.style.top = newTop + 'px';
+    }
+
+    }
+
+    oSmall.onmouseout = function () {
+        oBig.style.display = 'block';
+        oSquare.style.display = 'none';
+    }
+
+
+</script>
+</body>
+</html>
