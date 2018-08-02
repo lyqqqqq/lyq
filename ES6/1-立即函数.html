@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+    <li>005</li>
+</ul>
+<script>
+    var aLi = document.getElementsByTagName('li');
+    for (var i=0;i<aLi.length;i++){
+        (function (index) {
+            aLi[index].onclick=function () {
+                console.log(index);
+            }
+        })(i);
+    }
+</script>
+</body>
+</html>

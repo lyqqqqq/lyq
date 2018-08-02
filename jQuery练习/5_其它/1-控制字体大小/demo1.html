@@ -5,11 +5,11 @@
 <title></title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
  <!--   引入jQuery -->
- <script src="../../../jquery-1.12.4.js" type="text/javascript"></script>
+ <script src="jquery-1.12.4.js" type="text/javascript"></script>
  <script type="text/javascript">
 	$(function(){
 		$("span").click(function(){
-			var thisEle = $("#para").css("font-size"); 
+			var thisEle = $("#para").css("font-size");
 			var textFontSize = parseFloat(thisEle , 10);
 			var unit = thisEle.slice(-2); //获取单位
 			var cName = $(this).attr("class");
