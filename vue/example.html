@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style: none;
+        }
+        #box h1{
+            text-align: center;
+        }
+        #box li{
+            width: 200px;
+            height: 50px;
+            background: #FA5889;
+            margin: 10px auto;
+            position: relative;
+        }
+        #box li span{
+            color: white;
+            line-height: 50px;
+        }
+        #box li a
+        {
+            color: white;
+            line-height: 50px;
+            position: absolute;
+            left: 150px;
+        }
+        #bottom{
+            border-top: 1px solid black;
+            width: 300px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <h1>services</h1>
+    <ul>
+        <li @click="click1" :class="isPink">
+            <span>aaa</span>
+            <a>234</a>
+        </li>
+        <li @click="click1" :class="isPink">
+            <span>bbb</span>
+            <a>927</a>
+        </li>
+        <li @click="click1" :class="isPink">
+            <span>ccc</span>
+            <a>247</a>
+        </li>
+        <li @click="click1" :class="isPink">
+            <span>ddd</span>
+            <a>316</a>
+        </li>
+        <li @click="click1" :class="isPink">
+            <span>eee</span>
+            <a>532</a>
+        </li>
+    </ul>
+    <div id="bottom">
+        <span>total:</span>
+        {{msg}}
+    </div>
+</div>
+<script src="vue.js"></script>
+<script>
+    var vm = new Vue({
+        el:'#box',
+        data:{
+            msg:0,
+            methods:{
+                click1(){
+                    this.isPink = !this.isPink;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

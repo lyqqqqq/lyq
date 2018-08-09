@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var arr = [1,2,3,4,NaN,3,2,5];
+
+    Array.prototype.io = function(n){
+        for(var i=0;i<this.length;i++){
+            if(Object.is(n,this[i])){
+                return i;
+            }
+        }
+        return -1;
+    }
+    console.log(arr.io(NaN));
+</script>
+
+</body>
+</html>

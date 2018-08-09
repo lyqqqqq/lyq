@@ -1,0 +1,44 @@
+$color:#f00;
+$bg:background;
+$text:text;
+@import "_common";
+#div1{
+  background:$color;
+  color: $color;
+}
+#div2{
+  font-size: 15px;
+  a{
+    width: 20px;
+    &:hover{
+      color: red;
+    }
+    &-text{
+      height: 10px;
+    }
+  }
+}
+#div3{
+  background: {
+    image: url("a,jpg");
+    size:cover;
+  };
+  border: {
+    top: {
+      color: $color;
+      style: solid;
+      width: 10px;
+    };
+  };
+}
+##{$text}{
+  #{$bg}:url("");
+}
+@mixin xxx($size,$color:yellow){
+  width: $size;
+  height: $size;
+  background: $color;
+}
+#div4{
+  @include xxx()
+}

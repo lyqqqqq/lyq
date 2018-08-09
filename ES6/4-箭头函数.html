@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul>
+    <li>001</li>
+    <li>002</li>
+    <li>003</li>
+    <li>004</li>
+</ul>
+<script>
+    // var aLi = document.getElementsByTagName('li');
+    // for (var i=0;i<aLi.length;i++){
+    //     aLi[i].onclick = function () {
+    //         // var that = this;
+    //         set
+    // Timeout(()=>{
+    //             console.log(this.innerHTML);
+    //         },1000)
+    //     }
+    // }
+
+    var obj = {
+        name:'zs',
+        age:12,
+        say:()=>{
+            console.log(this.age);
+        }
+    }
+    obj.say();
+    
+</script>
+</body>
+</html>

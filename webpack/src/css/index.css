@@ -1,0 +1,18 @@
+#div1{
+    width: 400px;
+    height: 400px;
+    /*background: url("../img/1.jpg");*/
+}
+#div2{
+    width: 400px;
+    height: 400px;
+}
+@keyframes xxx {
+
+}
+.first{
+    background: palegoldenrod;
+}
+.search{
+    width: 100px;
+}

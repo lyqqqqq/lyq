@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var xxx = {d:4};
+    var o1 = {
+        a:xxx,
+        b:2
+    };
+    var o2 = {
+        c:3
+    };
+    var obj = {
+        ...o1,
+        ...o2
+    };
+    //    console.log(o1);
+    console.log(obj);
+    obj.a.d = 5;
+    console.log(o1);
+</script>
+</body>
+</html>

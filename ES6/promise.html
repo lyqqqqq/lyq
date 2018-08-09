@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var num = 0;
+       setTimeout(function(){
+           num++;
+       },1000)
+
+       setTimeout(function(){
+           num++;
+       },2000)
+
+       setTimeout(function(){
+           num++;
+       },3000)
+
+       var timer = setInterval(function(){
+           if(num == 3){
+               console.log('success');
+               clearInterval(timer);
+           }
+       },50)
+</script>
+</body>
+</html>
